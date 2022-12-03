@@ -1,9 +1,9 @@
 version: '3'
 services:
-  # my-app:
-  # image: ${docker-registry}/my-app:1.0
-  # ports:
-  # - 3000:3000
+  my-app:
+    image: kkukkola/private-repository:1.3
+    ports:
+      - 3000:3000
   mongodb:
     image: mongo
     ports:
@@ -12,7 +12,7 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
-      - mongo-data:/data/db
+      - mongo-data:/data/db # makes it possible to have persistency between container restarts
   mongo-express:
     image: mongo-express
     restart: always # fixes MongoNetworkError when mongodb is not ready when mongo-express starts
