@@ -8,6 +8,7 @@ pipeline {
     
       steps {
         echo 'building...'
+        echo 'building number twoooo......'
       }
     }
     stage("test") {
